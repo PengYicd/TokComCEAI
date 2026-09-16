@@ -1,0 +1,8 @@
+Encode the original message using the protocol.
+Protocol:
+$PROTOCOL$
+
+Original message: '$ORIGINAL_MESSAGE$'
+
+Follow the protocol exactly. Use only codewords from the codebook and follow the syntax rules and examples. Preserve exact entity identity: if the message mentions `<name> (id)`, encode that exact instance and do not substitute another same-name entity or a generic type token.
+You may think before answering, but the final encoded message must appear exactly once inside <|message|> and <|message|> tags. <|message|>xxx<|message|>

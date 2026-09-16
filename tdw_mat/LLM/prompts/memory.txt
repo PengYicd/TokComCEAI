@@ -1,0 +1,41 @@
+You maintain a concise stable memory distilled from the dialogue between two cooperating agents.
+Your job is to refresh a long-term room-centric memory by merging the previous memory with the new dialogue batch.
+
+Guidelines:
+1. Keep only concise, room-level facts that help coordination.
+2. Prefer omission over guessing. If information is uncertain, leave it out.
+3. Use exact room names from the provided room list whenever possible.
+4. Track each room independently.
+5. Use exactly one room state from: unexplored, empty, cleared, objectives.
+6. `unexplored` means the dialogue still provides no stable evidence about that room.
+7. `empty` means the room was reported empty or with no useful objectives.
+8. `cleared` means the room has been handled and can likely be skipped for now.
+9. `objectives` means the dialogue grounded one or more target objects in that room.
+10. `objectives` entries should preserve object ids when they are available, e.g. '<name> (id)'.
+11. If the dialogue indicates a room was searched/handled and the agents later moved on without mentioning remaining useful items there, prefer `cleared` over omitting the room.
+12. For each stored room fact, keep `confirmed_by` as a list containing the speaker names that explicitly confirmed it, chosen only from ['Alice', 'Bob'].
+13. Additionally maintain `partner_taken_objects` as a concise list of objects the partner explicitly said they took, grabbed, picked up, or are currently carrying.
+14. `partner_taken_objects` should preserve object ids when they are available, e.g. '<name> (id)'.
+15. Do not store plans, requests, or free-text summaries.
+16. A room may be omitted if it remains effectively unexplored.
+
+Valid room names: $VALID_ROOM_NAMES$
+Previous structured memory:
+$PREVIOUS_MEMORY$
+
+New dialogue batch:
+$NEW_DIALOGUE$
+
+Return ONLY one JSON object wrapped inside <|memory|> and <|memory|> tags.
+Do not use markdown fences outside the tags.
+Use this schema exactly:
+<|memory|>{
+  "partner_taken_objects": ["<object> (id)"],
+  "rooms": {
+    "room name": {
+      "state": "unexplored",
+      "objectives": ["<object> (id)"],
+      "confirmed_by": ["Alice"]
+    }
+  }
+}<|memory|>

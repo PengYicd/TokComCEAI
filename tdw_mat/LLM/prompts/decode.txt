@@ -1,0 +1,8 @@
+Decode the encoded message into a clear natural-language message using the protocol.
+Protocol:
+$PROTOCOL$
+
+Encoded message: '$ENCODED_MESSAGE$'
+
+Follow the protocol exactly, including the syntax rules and examples. Do not invent unsupported details. Preserve exact entity identity and do not rewrite one `<name> (id)` as another same-name entity.
+$NOISY_CHANNEL_NOTE$You may think before answering, but the final decoded message must appear exactly once inside <|message|> and <|message|> tags. For example, <|message|>xxx<|message|>

@@ -1,0 +1,174 @@
+{
+  "syntax rules": [
+    "rule 1: Messages follow the structure [Action/State] [Entity/Location] [Optional: Item/Detail].",
+    "rule 2: Codewords are space-separated single tokens.",
+    "rule 3: Each object and container codeword maps to a unique entity ID; generic name-based tokens are forbidden.",
+    "rule 4: Room IDs are mapped to unique indexed tokens (R1-R6) to distinguish multiple rooms of the same type.",
+    "rule 5: To report multiple items (e.g., found or remaining), list the item tokens sequentially after the action token."
+  ],
+  "codebook": [
+    {
+      "codeword": "S",
+      "meaning": "claiming or currently searching a room",
+      "category": "action"
+    },
+    {
+      "codeword": "E",
+      "meaning": "room is empty or cleared of all target items",
+      "category": "state"
+    },
+    {
+      "codeword": "F",
+      "meaning": "found item(s) in current room",
+      "category": "action"
+    },
+    {
+      "codeword": "T",
+      "meaning": "taken/grasped the item",
+      "category": "action"
+    },
+    {
+      "codeword": "R",
+      "meaning": "items still remaining/needed",
+      "category": "state"
+    },
+    {
+      "codeword": "M",
+      "meaning": "moving to a destination room",
+      "category": "action"
+    },
+    {
+      "codeword": "D",
+      "meaning": "transporting items to the bed (delivery)",
+      "category": "action"
+    },
+    {
+      "codeword": "R1",
+      "meaning": "Livingroom (1000)",
+      "category": "room"
+    },
+    {
+      "codeword": "R2",
+      "meaning": "Bedroom (2000)",
+      "category": "room"
+    },
+    {
+      "codeword": "R3",
+      "meaning": "Office (3000)",
+      "category": "room"
+    },
+    {
+      "codeword": "R4",
+      "meaning": "Livingroom (4000)",
+      "category": "room"
+    },
+    {
+      "codeword": "R5",
+      "meaning": "Kitchen (5000)",
+      "category": "room"
+    },
+    {
+      "codeword": "R6",
+      "meaning": "Livingroom (6000)",
+      "category": "room"
+    },
+    {
+      "codeword": "A1",
+      "meaning": "apple (10133582)",
+      "category": "target"
+    },
+    {
+      "codeword": "A2",
+      "meaning": "apple (2419783)",
+      "category": "target"
+    },
+    {
+      "codeword": "B1",
+      "meaning": "banana (12898298)",
+      "category": "target"
+    },
+    {
+      "codeword": "B2",
+      "meaning": "banana (7380658)",
+      "category": "target"
+    },
+    {
+      "codeword": "Br1",
+      "meaning": "bread (1285132)",
+      "category": "target"
+    },
+    {
+      "codeword": "Bg1",
+      "meaning": "burger (644476)",
+      "category": "target"
+    },
+    {
+      "codeword": "L1",
+      "meaning": "loaf_bread (13967555)",
+      "category": "target"
+    },
+    {
+      "codeword": "L2",
+      "meaning": "loaf_bread (8462939)",
+      "category": "target"
+    },
+    {
+      "codeword": "L3",
+      "meaning": "loaf_bread (9420409)",
+      "category": "target"
+    },
+    {
+      "codeword": "O1",
+      "meaning": "orange (14249767)",
+      "category": "target"
+    },
+    {
+      "codeword": "C1",
+      "meaning": "plate (1457820)",
+      "category": "container"
+    },
+    {
+      "codeword": "C2",
+      "meaning": "tea_tray (16224318)",
+      "category": "container"
+    }
+  ],
+  "example": [
+    {
+      "encoded message": "S R1",
+      "original message": "I am claiming/searching Livingroom (1000)"
+    },
+    {
+      "encoded message": "E R1",
+      "original message": "Livingroom (1000) is empty/cleared"
+    },
+    {
+      "encoded message": "F R5 A1 L1",
+      "original message": "Found apple (10133582) and loaf_bread (13967555) in Kitchen (5000)"
+    },
+    {
+      "encoded message": "T A1",
+      "original message": "I have taken apple (10133582)"
+    },
+    {
+      "encoded message": "M R4",
+      "original message": "Moving to Livingroom (4000)"
+    },
+    {
+      "encoded message": "D",
+      "original message": "Transporting carried objects to the bed"
+    },
+    {
+      "encoded message": "R B1 O1",
+      "original message": "Remaining items needed: banana (12898298) and orange (14249767)"
+    },
+    {
+      "encoded message": "S R4",
+      "original message": "I am claiming/searching Livingroom (4000) [Contrast: distinct from R1]"
+    },
+    {
+      "encoded message": "F R5 A2",
+      "original message": "Found apple (2419783) in Kitchen (5000) [Contrast: distinct from A1]"
+    }
+  ]
+}

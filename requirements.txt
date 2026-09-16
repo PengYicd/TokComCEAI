@@ -1,0 +1,16 @@
+backoff==2.2.1
+gym==0.26.2
+matplotlib==3.6.3
+numpy==1.24.3
+opencv-python==4.7.0.68
+pandas==1.5.3
+Pillow==10.4.0
+pyastar2d==1.0.6
+requests==2.32.3
+scipy==1.10.1
+tdw==1.11.23.5
+tqdm==4.65.0
+
+# Optional, only needed by scripts/generate_snr_sentence_similarity_report.py
+# torch
+# transformers

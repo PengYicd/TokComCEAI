@@ -1,0 +1,24 @@
+Design a compact, stable, and efficient task-specific token communication protocol for two embodied agents.
+$TASK_CONTEXT$
+
+Requirements:
+1. The protocol must contain `syntax rules`, `codebook`, and `example`.
+2. Preserve coordination-critical meaning before compression. Different partner decisions must not collapse to the same encoded message.
+3. Object and container codewords must be instance-specific: each codeword maps to exactly one `<name> (id)`. If two entities share a name but have different ids, they must use different codewords. Do not use generic type-level tokens such as `apple(any)`.
+4. Action/state codewords may be reusable, but the protocol must clearly distinguish room claim/search, room empty/cleared, found items, taken items, remaining items, moving, and transporting/delivering.
+5. Keep messages short and compositional. Messages are space-separated codewords, and each codeword must be a single short token without whitespace.
+6. Include contrastive examples showing different encodings for: (a) same-name entities with different ids, and (b) different room states such as searching vs empty.
+You may think before answering. Put the final protocol JSON inside <|protocol|> and <|protocol|>.
+Use exactly this schema:
+<|protocol|>{
+  "syntax rules": [
+    "rule 1: xxx",
+    "rule 2: xxx",
+  ],
+  "codebook": [
+    {"codeword": "x", "category": "x", "meaning": "x"},
+  ],
+  "example": [
+    {"encoded message": "xxx xxx", "original message": "xxx xxx xxx"},
+  ]
+}<|protocol|>

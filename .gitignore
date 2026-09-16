@@ -1,0 +1,35 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local runtime dumps
+action*.log
+*.pkl
+tdw_mat/LLM/logs/
+paper_images/
+dataCollection/
+
+# Large third-party assets. Download separately; see README.md.
+transport_challenge_asset_bundles/
+
+# Full experiment dumps
+results/
+artifacts/
+
+# Unused tokenizer snapshot leftover from an earlier channel prototype
+channel/tokenizer.json
+channel/tokenizer_config.json
+channel/deepseek_tokenizer.py
+
+# Internal writing notes, not part of the code release
+token_comm_experiment_summary.md
+新建 文本文档.txt

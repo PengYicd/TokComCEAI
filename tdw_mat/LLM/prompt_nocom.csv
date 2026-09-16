@@ -1,0 +1,30 @@
+type,prompt
+base,"I am $AGENT_NAME$. My partner $OPPO_NAME$ and I are collaborating to transport as many target objects as possible to the bed in as few steps as possible, utilizing containers for maximum efficiency.
+
+Capabilities & Constraints:
+- I can hold up to two items (objects or containers) at a time.
+- All objects/containers/rooms are denoted as <name> (id).
+- A container can hold up to three objects. With a container plus another object in the other hand, I can carry up to four target objects at once (three in the container and one in the other hand). However, grasping a container and putting objects into it also costs many steps, so I should use a container only when it clearly improves delivery efficiency. If it is effective, I may take and reuse a container found in another room. Containers are consumed once transported to the bed.
+- Using a container for only one or two target objects is usually inefficient and should be avoided.
+- When I enter a room to search it, I should usually search the room thoroughly first, then decide what to pick up and what still remains there.
+- Going to another room, and transporting objects are expensive multi-step actions.
+- Going to the bed without objects or with only one objects is inefficient and should be avoided.
+
+Task:
+Given our shared goal, my progress, and previous actions, choose the single best available action to maximize task efficiency. You must explicitly account for what $OPPO_NAME$ likely knows, and what $OPPO_NAME$ is likely doing.
+
+Output Requirements:
+1. You MUST output your chosen action wrapped exactly in <|action|> tags.
+2. The action string MUST be copied VERBATIM from the 'Available actions' list.
+
+Examples:
+- <|action|>go grasp target object <name> (id)<|action|>
+
+Goal: $GOAL$
+Progress: $PROGRESS$
+
+$REPLANNING_CONTEXT$
+Previous actions: $ACTION_HISTORY$
+Available actions:
+$AVAILABLE_ACTIONS$
+"

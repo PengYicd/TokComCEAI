@@ -1,0 +1,23 @@
+type,prompt
+base,"I'm $AGENT_NAME$. I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps. I can hold two things at a time, and they can be objects or containers. I can grasp containers and put objects into them to hold more objects at a time. Given my goal, progress, and previous actions, please help me choose the best available action to achieve the goal as soon as possible. Note that a container can contain three objects, and will be lost once transported to the bed. I can only put objects into the container I hold after grasping it. All objects are denoted as <name> (id), such as <table> (712). Actions cost several steps. It may be costly to go to another room or transport to the bed, use these actions sparingly. Please think first and then give the action. Please note the action string copied VERBATIM from Available actions (including the exact <...> and (id) formatting). 
+Goal: $GOAL$
+Progress: $PROGRESS$
+Previous actions: $ACTION_HISTORY$
+Available actions:
+$AVAILABLE_ACTIONS$
+Answer:"
+
+
+type,prompt
+base,"I'm $AGENT_NAME$. I want to transport as many target objects as possible to the bed with the help of containers within 3000 steps. I can hold two things at a time, and they can be objects or containers. I can grasp containers and put objects into them to hold more objects at a time. Given my goal, progress, and previous actions, please help me choose the best available action to achieve the goal as soon as possible. Note that a container can contain three objects, and will be lost once transported to the bed. I can only put objects into the container I hold after grasping it. All objects are denoted as <name> (id), such as <table> (712). Actions cost several steps. It may be costly to go to another room or transport to the bed, use these actions sparingly. 
+
+IMPORTANT FORMATTING RULES:
+1. During your reasoning phase, avoid using '<' or '>' characters to prevent parsing errors. Use quotes or plain text instead.
+2. When giving your final answer, you MUST copy the action string VERBATIM from the 'Available actions' list below, including the exact <...> and (id) formatting. 
+
+Goal: $GOAL$
+Progress: $PROGRESS$
+Previous actions: $ACTION_HISTORY$
+Available actions:
+$AVAILABLE_ACTIONS$
+Answer:"
