@@ -1,0 +1,25 @@
+message_id,direction,mode,agent_id,peer_agent_id,step,semantic_message,channel_input_text,channel_output_text,raw_token_count,raw_total_bits,channel_token_count,channel_total_bits,encoded_token_count,encoded_total_bits,codebook_size,snr_db,mapped_ter,noise_enabled,token_error_count
+1,send,protocol,0,1,0,I am searching the <Livingroom> (4000).,S R4,S R4,12,204,3,51,2,10,25,10.0,0.0,False,0
+1,send,protocol,1,0,0,I am searching the <Kitchen> (5000).,S R5,S R5,12,204,3,51,2,10,25,10.0,0.0,False,0
+2,receive,protocol,0,1,1,I am claiming/searching Kitchen (5000),S R5,I am claiming/searching Kitchen (5000),10,170,3,51,3,51,,10.0,0.0,False,0
+2,receive,protocol,1,0,1,I am claiming/searching Livingroom (4000),S R4,I am claiming/searching Livingroom (4000),11,187,3,51,3,51,,10.0,0.0,False,0
+3,send,protocol,1,0,550,<Kitchen> (5000) update: I took <loaf_bread> (8462939) and <burger> (644476). Remaining here: <loaf_bread> (13967555).,T L2 Bg1 R L1,T L2 Bg1 R L1,46,782,9,153,5,25,25,10.0,0.0,False,0
+3,receive,protocol,0,1,551,I have taken loaf_bread (8462939) and burger (644476). Remaining items needed: loaf_bread (13967555),T L2 Bg1 R L1,I have taken loaf_bread (8462939) and burger (644476). Remaining items needed: loaf_bread (13967555),30,510,9,153,9,153,,10.0,0.0,False,0
+4,send,protocol,0,1,636,"<Livingroom> (4000) update: I took orange (14249767) and apples (2419783, 10133582). No target objects remain here.",T O1 A2 A1 E R4,T O1 A2 A1 E R4,36,612,10,170,6,30,25,10.0,0.0,False,0
+4,receive,protocol,1,0,637,"I have taken orange (14249767), apple (2419783), and apple (10133582). Livingroom (4000) is empty/cleared.",T O1 A2 A1 E R4,"I have taken orange (14249767), apple (2419783), and apple (10133582). Livingroom (4000) is empty/cleared.",34,578,10,170,10,170,,10.0,0.0,False,0
+5,send,protocol,0,1,1039,<Bedroom> (2000) update: I found nothing here. Room is empty.,E R2,E R2,19,323,3,51,2,10,25,10.0,0.0,False,0
+5,receive,protocol,1,0,1040,Bedroom (2000) is empty/cleared,E R2,Bedroom (2000) is empty/cleared,11,187,3,51,3,51,,10.0,0.0,False,0
+6,send,protocol,1,0,1147,I'm heading to <Livingroom> (6000) to collect <loaf_bread> (9420409) and <bread> (1285132).,M R6 L3 Br1,M R6 L3 Br1,34,578,7,119,4,20,25,10.0,0.0,False,0
+6,receive,protocol,0,1,1148,Moving to Livingroom (6000) for loaf_bread (9420409) and bread (1285132),M R6 L3 Br1,Moving to Livingroom (6000) for loaf_bread (9420409) and bread (1285132),24,408,7,119,7,119,,10.0,0.0,False,0
+7,send,protocol,0,1,1266,I am heading to <Livingroom> (1000) to get the <banana> (7380658).,M R1 B2,M R1 B2,24,408,5,85,3,15,25,10.0,0.0,False,0
+7,receive,protocol,1,0,1267,Moving to Livingroom (1000) for banana (7380658),M R1 B2,Moving to Livingroom (1000) for banana (7380658),15,255,5,85,5,85,,10.0,0.0,False,0
+8,send,protocol,1,0,1583,<Livingroom> (6000) update: I took <loaf_bread> (9420409) and <bread> (1285132). The room is now cleared.,T R6 L3 Br1 E R6,T R6 L3 Br1 E R6,38,646,10,170,6,30,25,10.0,0.0,False,0
+8,receive,protocol,0,1,1584,I have taken loaf_bread (9420409) and bread (1285132) in Livingroom (6000). Livingroom (6000) is empty/cleared.,T R6 L3 Br1 E R6,I have taken loaf_bread (9420409) and bread (1285132) in Livingroom (6000). Livingroom (6000) is empty/cleared.,37,629,10,170,10,170,,10.0,0.0,False,0
+9,send,protocol,0,1,1627,Livingroom (1000) update: I took banana (7380658) and banana (12898298). Room is now empty. 1 loaf_bread remains globally.,T B2 B1 E R1 R L1,T B2 B1 E R1 R L1,36,612,11,187,7,35,25,10.0,0.0,False,0
+9,receive,protocol,1,0,1628,I have taken banana (7380658) and banana (12898298). Livingroom (1000) is empty/cleared. Remaining items needed: loaf_bread (13967555).,T B2 B1 E R1 R L1,I have taken banana (7380658) and banana (12898298). Livingroom (1000) is empty/cleared. Remaining items needed: loaf_bread (13967555).,41,697,11,187,11,187,,10.0,0.0,False,0
+10,send,protocol,0,1,1896,I am heading to <Office> (3000) to find the last remaining loaf_bread.,M R3,M R3,20,340,3,51,2,10,25,10.0,0.0,False,0
+10,receive,protocol,1,0,1897,Moving to Office (3000),M R3,Moving to Office (3000),7,119,3,51,3,51,,10.0,0.0,False,0
+11,send,protocol,0,1,2250,"<Office> (3000) update: I found nothing here, it is empty. 1 loaf_bread still remains overall.",E R3 R,E R3 R,27,459,4,68,3,15,25,10.0,0.0,False,0
+11,receive,protocol,1,0,2251,"Office (3000) is empty/cleared, remaining items needed",E R3 R,"Office (3000) is empty/cleared, remaining items needed",14,238,4,68,4,68,,10.0,0.0,False,0
+12,send,protocol,0,1,2388,Livingroom (4000) is empty. I'm holding a plate. 1 loaf_bread still remains overall.,E R4 T C1 R L1,E R4 T C1 R L1,24,408,9,153,6,30,25,10.0,0.0,False,0
+12,receive,protocol,1,0,2389,"Livingroom (4000) is empty/cleared, I have taken plate (1457820), and remaining items needed: loaf_bread (13967555).",E R4 T C1 R L1,"Livingroom (4000) is empty/cleared, I have taken plate (1457820), and remaining items needed: loaf_bread (13967555).",34,578,9,153,9,153,,10.0,0.0,False,0
